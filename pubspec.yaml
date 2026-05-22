@@ -1,4 +1,4 @@
-name: SkyNet VPN
+name: skynet_vpn
 description: Cross Platform Multi Protocol Proxy Frontend.
 publish_to: "none"
 version: 4.1.2+40102
