@@ -1,13 +1,18 @@
 workflows:
-  android-release:
-    name: SkyNet VPN Build
+  android-build:
+    name: SkyNet VPN
 
-    max_build_duration: 60
+    max_build_duration: 120
 
     environment:
       flutter: stable
 
     scripts:
+      - git config --global url."https://github.com/".insteadOf git@github.com:
+      - git config --global url."https://github.com/".insteadOf ssh://git@github.com/
+      - git submodule sync --recursive
+      - git submodule update --init --recursive
+
       - flutter pub get
       - flutter build apk --release
 
